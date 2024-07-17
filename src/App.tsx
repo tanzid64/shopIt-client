@@ -6,6 +6,7 @@ import Header from "./components/Header";
 const Home = lazy(() => import("./pages/Home"));
 const Search = lazy(() => import("./pages/Search"));
 const Cart = lazy(() => import("./pages/Cart"));
+const Shipping = lazy(() => import("./pages/Shipping"));
 // Admin
 const Dashboard = lazy(() => import("./pages/admin/dashboard"));
 const Products = lazy(() => import("./pages/admin/products"));
@@ -31,18 +32,24 @@ const App = () => {
       <Header />
       <Suspense fallback={<Loader />}>
         <Routes>
+          {/* Public Routes */}
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
           <Route path="/cart" element={<Cart />} />
-          {/* <Route
-            element={
-              <ProtectedRoute
-                isAuthenticated={true}
-                adminRoute={true}
-                isAdmin={true}
-              />
-            }
-          > */}
+          {/* Protected Routes */}
+          <Route>
+            <Route path="/shipping" element={<Shipping />} />
+          </Route>
+          {/* Admin Routes */}
+          <Route
+          // element={
+          //   <ProtectedRoute
+          //     isAuthenticated={true}
+          //     adminRoute={true}
+          //     isAdmin={true}
+          //   />
+          // }
+          >
             <Route path="/admin/dashboard" element={<Dashboard />} />
             <Route path="/admin/product" element={<Products />} />
             <Route path="/admin/customer" element={<Customers />} />
@@ -65,7 +72,7 @@ const App = () => {
               path="/admin/transaction/:id"
               element={<TransactionManagement />}
             />
-          {/* </Route> */}
+          </Route>
         </Routes>
       </Suspense>
     </Router>

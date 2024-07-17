@@ -34,8 +34,9 @@ $color-dark: rgb(46, 46, 46);
 $color-primary: rgb(0, 104, 136);
 
 @import "admin-styles/mixin";
-@import "cart.scss";
 @import "home.scss";
+@import "cart.scss";
+@import "shipping.scss";
 @import "admin-styles/dashboard";
 @import "admin-styles/products";
 @import "admin-styles/chart";
