@@ -15,17 +15,17 @@ const user = {
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const logoutHandler = () => {
-    setIsOpen((prev) => !prev);
+    setIsOpen(false);
   };
   return (
     <nav className="header">
-      <Link onClick={() => setIsOpen((prev) => !prev)} to={"/"}>
-        Home
+      <Link onClick={() => setIsOpen(false)} to={"/"}>
+        HOME
       </Link>
-      <Link onClick={() => setIsOpen((prev) => !prev)} to={"/search"}>
+      <Link onClick={() => setIsOpen(false)} to={"/search"}>
         <FaSearch />
       </Link>
-      <Link onClick={() => setIsOpen((prev) => !prev)} to={"/cart"}>
+      <Link onClick={() => setIsOpen(false)} to={"/cart"}>
         <FaShoppingBag />
       </Link>
       {user?._id ? (
