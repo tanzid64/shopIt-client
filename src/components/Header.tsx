@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 const user = {
   _id: "1",
-  role: "admin",
+  role: "user",
 };
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
